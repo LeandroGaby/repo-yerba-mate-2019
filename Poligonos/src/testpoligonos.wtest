@@ -1,0 +1,365 @@
+import Poligonos.*
+
+test "testEquilatero Correcto 1" 
+{
+	poligono.a(1)
+	poligono.b(1)
+	poligono.c(1)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+	assert.that(poligono.esEquilatero())
+}
+
+test "testEquilatero Correcto 2" 
+{
+	poligono.a(28)
+	poligono.b(28)
+	poligono.c(28)
+	assert.that(poligono.esEquilatero())
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEquilatero Correcto 3" 
+{
+	poligono.a(7)
+	poligono.b(7)
+	poligono.c(7)
+	assert.that(poligono.esEquilatero())
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEquilatero Lado A Distinto" 
+{
+	poligono.a(5)
+	poligono.b(3)
+	poligono.c(3)
+	assert.that(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEquilatero Lado B Distinto" 
+{
+	poligono.a(5)
+	poligono.b(9)
+	poligono.c(5)
+	assert.that(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEquilatero Lado C Distinto" 
+{
+	poligono.a(2)
+	poligono.b(2)
+	poligono.c(3)
+	assert.that(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEquilatero Todos En 0"
+{
+	poligono.a(0)
+	poligono.b(0)
+	poligono.c(0)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esEquilatero())
+}
+
+test "testEquilatero Lado A En 0"
+{
+	poligono.a(0)
+	poligono.b(7)
+	poligono.c(7)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esEquilatero())
+}
+
+test "testEquilatero Lado B En 0"
+{
+	poligono.a(44)
+	poligono.b(0)
+	poligono.c(44)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esEquilatero())
+}
+
+test "testEquilatero Lado C En 0"
+{
+	poligono.a(23)
+	poligono.b(23)
+	poligono.c(0)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esEquilatero())
+}
+
+
+
+test "testEscaleno Correcto 1" 
+{
+	poligono.a(4)
+	poligono.b(2)
+	poligono.c(3)
+	assert.that(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+}
+
+test "testEscaleno Correcto 2" 
+{
+	poligono.a(3)
+	poligono.b(6)
+	poligono.c(4)
+	assert.that(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+}
+
+test "testEscaleno Correcto 3" 
+{
+	poligono.a(14)
+	poligono.b(7)
+	poligono.c(8)
+	assert.that(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+}
+
+test "testEscaleno Lado A=B" 
+{
+	poligono.a(2)
+	poligono.b(2)
+	poligono.c(3)
+	assert.that(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esEquilatero())
+}
+
+test "testEscaleno Lado A=C" 
+{
+	poligono.a(2)
+	poligono.b(3)
+	poligono.c(2)
+	assert.that(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esEquilatero())
+}
+
+test "testEscaleno Lado B=C" 
+{
+	poligono.a(5)
+	poligono.b(3)
+	poligono.c(3)
+	assert.that(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esEquilatero())
+}
+
+test "testEscaleno Lados Iguales"
+{
+	poligono.a(9)
+	poligono.b(9)
+	poligono.c(9)
+	assert.that(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+}
+
+test "testEscaleno Lado A Excede Limites" 
+{
+	poligono.a(6)
+	poligono.b(3)
+	poligono.c(2)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEscaleno Lado B Excede Limites" 
+{
+	poligono.a(2)
+	poligono.b(6)
+	poligono.c(3)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEscaleno Lado C Excede Limites" 
+{
+	poligono.a(2)
+	poligono.b(3)
+	poligono.c(6)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEscaleno Todos En 0" 
+{
+	poligono.a(0)
+	poligono.b(0)
+	poligono.c(0)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEscaleno Lado A En 0" 
+{
+	poligono.a(0)
+	poligono.b(1)
+	poligono.c(2)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEscaleno Lado B En 0" 
+{
+	poligono.a(1)
+	poligono.b(0)
+	poligono.c(2)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testEscaleno Lado C En 0" 
+{
+	poligono.a(2)
+	poligono.b(1)
+	poligono.c(0)
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+
+
+test "testIsosceles Correcto 1" 
+{
+	poligono.a(2)
+	poligono.b(3)
+	poligono.c(2)
+	assert.that(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testIsosceles Correcto 2" 
+{
+	poligono.a(3)
+	poligono.b(3)
+	poligono.c(2)
+	assert.that(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testIsosceles Correcto 3" 
+{
+	poligono.a(7)
+	poligono.b(7)
+	poligono.c(13)
+	assert.that(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testIsosceles Lados Distintos" 
+{
+	poligono.a(7)
+	poligono.b(9)
+	poligono.c(14)
+	assert.that(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEquilatero())
+}
+
+test "testIsosceles Lados Iguales" 
+{
+	poligono.a(9)
+	poligono.b(9)
+	poligono.c(9)
+	assert.that(poligono.esEquilatero())
+	assert.notThat(poligono.esIsosceles())
+	assert.notThat(poligono.esEscaleno())
+}
+
+test "testIsosceles Lado A Excede Limites" 
+{
+	poligono.a(15)
+	poligono.b(7)
+	poligono.c(7)
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+}
+
+test "testIsosceles Lado B Excede Limites" 
+{
+	poligono.a(9)
+	poligono.b(28)
+	poligono.c(9)
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+}
+
+test "testIsosceles Lado C Excede Limites" 
+{
+	poligono.a(15)
+	poligono.b(15)
+	poligono.c(54)
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+}
+
+test "testIsosceles Todos En 0" 
+{
+	poligono.a(0)
+	poligono.b(0)
+	poligono.c(0)
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+}
+
+test "testIsosceles Lado A En 0" 
+{
+	poligono.a(0)
+	poligono.b(7)
+	poligono.c(7)
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+}
+
+test "testIsosceles Lado B En 0" 
+{
+	poligono.a(9)
+	poligono.b(0)
+	poligono.c(9)
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+}
+
+test "testIsosceles Lado C En 0" 
+{
+	poligono.a(24)
+	poligono.b(24)
+	poligono.c(0)
+	assert.notThat(poligono.esEquilatero())
+	assert.notThat(poligono.esEscaleno())
+	assert.notThat(poligono.esIsosceles())
+}
